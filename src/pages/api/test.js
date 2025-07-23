@@ -1,4 +1,4 @@
-//test
+//src/api/test.js
 
 import clientPromise from "../../../lib/mongodb";
 
