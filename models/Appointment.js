@@ -12,6 +12,22 @@ const appointmentSchema = new mongoose.Schema({
   mode: { type: String, enum: ["in-person", "video", "chat"] },
   status: { type: String, enum: ["pending", "confirmed", "cancelled", "completed"], default: "pending" },
   reason: String,
+
+
+  videoCall: {
+    link: String,
+    status: { type: String, enum: ['pending', 'in-progress', 'completed', 'cancelled'], default: 'pending' },
+    recordingUrl: String
+  },
+  feedback: {
+    rating: { type: Number, min: 1, max: 5 },
+    comments: String,
+    createdAt: { type: Date, default: Date.now }
+  },
+  
+
+
+
   prescription: String
 });
 

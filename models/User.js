@@ -30,6 +30,16 @@ const userSchema = new mongoose.Schema({
   allergies: [String],
   medications: [String],
 
+  emergencyContacts: [
+    {
+      name: { type: String, required: true },
+      relation: { type: String, required: true },
+      phone: { type: String, required: true },
+      email: { type: String },
+      address: { type: String },
+    }
+  ],
+
   createdAt: { type: Date, default: Date.now }
 });
 
